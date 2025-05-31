@@ -15,10 +15,15 @@ public class FPS_Movement : MonoBehaviour
     public LayerMask groundmask;
     bool isgrounded;
     public float jumpheight = 3f;
+    public GameObject lighttoggle;
+    public float lightmax = 100f;
+    public float lightsource;
+    public float lightcost = 0.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        lightsource = lightmax;
     }
 
     // Update is called once per frame
@@ -45,5 +50,23 @@ public class FPS_Movement : MonoBehaviour
         }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+        LightToggle();
+        LightUsage();
+    }
+    void LightToggle()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            lighttoggle.SetActive(!lighttoggle.activeInHierarchy);
+        }
+    }
+    void LightUsage()
+    {
+        if (lighttoggle.activeInHierarchy)
+        {
+            lightsource -= lightcost * Time.deltaTime;
+            lightsource = Mathf.Max(lightsource, 0f);
+        }
+
     }
 }
