@@ -15,8 +15,7 @@ namespace SlimUI.ModernMenu{
         [Tooltip("THe first list of buttons")]
         public GameObject firstMenu;
         [Tooltip("The Menu for when the PLAY button is clicked")]
-        public GameObject playMenu;
-        [Tooltip("The Menu for when the EXIT button is clicked")]
+
         public GameObject exitMenu;
         [Tooltip("Optional 4th Menu")]
         public GameObject extrasMenu;
@@ -83,7 +82,6 @@ namespace SlimUI.ModernMenu{
 		void Start(){
 			CameraObject = transform.GetComponent<Animator>();
 
-			playMenu.SetActive(false);
 			exitMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(false);
 			firstMenu.SetActive(true);
@@ -120,18 +118,15 @@ namespace SlimUI.ModernMenu{
 		public void PlayCampaign(){
 			exitMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(false);
-			playMenu.SetActive(true);
 		}
 		
 		public void PlayCampaignMobile(){
 			exitMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(false);
-			playMenu.SetActive(true);
 			mainMenu.SetActive(false);
 		}
 
 		public void ReturnMenu(){
-			playMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(false);
 			exitMenu.SetActive(false);
 			mainMenu.SetActive(true);
@@ -144,7 +139,6 @@ namespace SlimUI.ModernMenu{
 		}
 
 		public void  DisablePlayCampaign(){
-			playMenu.SetActive(false);
 		}
 
 		public void Position2(){
@@ -248,7 +242,6 @@ namespace SlimUI.ModernMenu{
 		}
 
 		public void ExtrasMenu(){
-			playMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(true);
 			exitMenu.SetActive(false);
 		}
