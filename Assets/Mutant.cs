@@ -130,7 +130,7 @@ public class Mutant : MonoBehaviour
     {
         while (true)
         {
-            int randomIdleValue = Random.Range(1, 4);
+            int randomIdleValue = Random.Range(1, 1);
             animator.SetInteger("idleValue", randomIdleValue);
 
             // Wait until leaving idle state (i.e., speed > 0.1f) or some time passes before changing again
@@ -151,19 +151,25 @@ public class Mutant : MonoBehaviour
 
     void CheckBackAttack()
     {
-        Vector3 toEnemy = (transform.position - player.position).normalized;
-        float angleFromBack = Vector3.Angle(player.forward, toEnemy);
         float distToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (angleFromBack < attackAngle && distToPlayer < attackDistance)
+        if (distToPlayer < attackDistance)
         {
             AttackPlayer();
         }
     }
 
+
     void AttackPlayer()
     {
-        Debug.Log("Back attack triggered!");
-        // TODO: Add attack logic (damage, animation, etc.)
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        // Prevent triggering a new attack if already in an attack animation
+        if (stateInfo.IsTag("Attack"))
+            return;
+
+        int random = Random.Range(1, 3);
+        animator.SetInteger("attackValue", random);
     }
+
 }
