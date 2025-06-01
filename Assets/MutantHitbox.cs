@@ -17,7 +17,7 @@ public class MutantHitbox : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.GetComponent<CharacterModel>().DecraseHealth(10f);
+            other.GetComponent<CharacterModel>().DecraseHealth(0.1f);
         }
     }
 }

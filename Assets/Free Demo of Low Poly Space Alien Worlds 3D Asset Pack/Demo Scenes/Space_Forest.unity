@@ -3486,13 +3486,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7231498335233190444, guid: d2fae7d26a2edc84d84ce657dad7245b, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8835220451183161200, guid: d2fae7d26a2edc84d84ce657dad7245b, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+    - target: {fileID: 1954940805154779234, guid: d2fae7d26a2edc84d84ce657dad7245b, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9173412482921908781, guid: d2fae7d26a2edc84d84ce657dad7245b, type: 3}
       propertyPath: m_LocalPosition.x
