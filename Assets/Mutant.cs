@@ -58,7 +58,7 @@ public class Mutant : MonoBehaviour
             else
             {
                 // Chase the player
-                print(IsDestinationReachable(player.position));
+              
                 if (IsDestinationReachable(player.position))
                     navMeshAgent.SetDestination(player.position);
                 else
