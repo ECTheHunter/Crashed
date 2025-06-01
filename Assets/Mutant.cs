@@ -48,14 +48,25 @@ public class Mutant : MonoBehaviour
             else
             {
                 // Chase the player
-                navMeshAgent.SetDestination(player.position);
+                print(IsDestinationReachable(player.position));
+                if (IsDestinationReachable(player.position))
+                    navMeshAgent.SetDestination(player.position);
+                else
+                    navMeshAgent.ResetPath(); // Stop movement if unreachable
             }
+
         }
 
         UpdateAnimator();
         CheckBackAttack();
     }
+    bool IsDestinationReachable(Vector3 targetPosition)
+    {
+        NavMeshPath path = new NavMeshPath();
+        navMeshAgent.CalculatePath(targetPosition, path);
 
+        return path.status == NavMeshPathStatus.PathComplete;
+    }
 
     bool IsInFlashlight()
     {
@@ -75,7 +86,16 @@ public class Mutant : MonoBehaviour
         }
         currentRunAwayTarget = runAwayCheckpoints[Random.Range(0, runAwayCheckpoints.Length)];
         isRunningAway = true;
-        navMeshAgent.SetDestination(currentRunAwayTarget.position);
+        if (IsDestinationReachable(currentRunAwayTarget.position))
+        {
+            navMeshAgent.SetDestination(currentRunAwayTarget.position);
+        }
+        else
+        {
+            navMeshAgent.ResetPath(); // Stop if checkpoint is not reachable
+            isRunningAway = false;
+            currentRunAwayTarget = null;
+        }
     }
 
     bool ReachedDestination()
