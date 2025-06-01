@@ -3,20 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
     public GameObject pauseMenuIU;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Pause();
         }
     }
 
@@ -24,7 +16,6 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseMenuIU.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
         Cursor.lockState = CursorLockMode.None; // Unlock the cursor
         Cursor.visible = true; // Make the cursor visible
     }
@@ -32,7 +23,6 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseMenuIU.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false; 
     }
