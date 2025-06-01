@@ -5,6 +5,7 @@ public class PauseMenuScript : MonoBehaviour
 {
     public GameObject pauseMenuIU;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public bool IsPaused
     {
         get;set;
@@ -13,9 +14,11 @@ public class PauseMenuScript : MonoBehaviour
 
     [SerializeField] private GameOverUI gameOver;
 >>>>>>> testMurat
+=======
+>>>>>>> parent of d4a8da0 (.)
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !gameOver.isDead)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
         }
