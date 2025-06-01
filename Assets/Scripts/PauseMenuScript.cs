@@ -4,13 +4,18 @@ using UnityEngine.SceneManagement;
 public class PauseMenuScript : MonoBehaviour
 {
     public GameObject pauseMenuIU;
+<<<<<<< HEAD
     public bool IsPaused
     {
         get;set;
     }
+=======
+
+    [SerializeField] private GameOverUI gameOver;
+>>>>>>> testMurat
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameOver.isDead)
         {
             Pause();
         }
