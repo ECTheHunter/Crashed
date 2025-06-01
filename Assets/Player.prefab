@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 5416498088922341016}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,14 +497,14 @@ MonoBehaviour:
   playerbody: {fileID: 9173412482921908781}
   playercamera: {fileID: 6240353178620664490}
   controller: {fileID: 5877941929145728439}
-  speed: 5
+  speed: 2
   gravity: -9.81
   groundcheck: {fileID: 373740453519344675}
   grounddistance: 0.35
   groundmask:
     serializedVersion: 2
     m_Bits: 8
-  jumpheight: 0.15
+  jumpheight: 0.6
   lighttoggle: {fileID: 7812004745152237157}
   lightmax: 100
   lightsource: 0
