@@ -2137,6 +2137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5416498088922341016, guid: d2fae7d26a2edc84d84ce657dad7245b, type: 3}
+      propertyPath: pauseMenuScript
+      value: 
+      objectReference: {fileID: 3519253758706543082}
     - target: {fileID: 7654170212081905529, guid: d2fae7d26a2edc84d84ce657dad7245b, type: 3}
       propertyPath: gameOver
       value: 
@@ -2195,6 +2199,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1582333750}
   m_SourcePrefab: {fileID: 100100000, guid: d2fae7d26a2edc84d84ce657dad7245b, type: 3}
+--- !u!114 &3519253758706543082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7654170212081905529, guid: d2fae7d26a2edc84d84ce657dad7245b, type: 3}
+  m_PrefabInstance: {fileID: 3519253758706543081}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582333744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068c73a05582d494bbd54b5b5ab39024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

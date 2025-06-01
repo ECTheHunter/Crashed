@@ -29,7 +29,7 @@ public class CharacterModel : MonoBehaviour
     private Image aclikBar;
     [SerializeField]
     private Image susuzlukBar;
-
+    [SerializeField] PauseMenuScript pauseMenuScript;
     public float Health
     {
         get => health;
@@ -92,9 +92,13 @@ public class CharacterModel : MonoBehaviour
 
     void Update()
     {
-        DecraseOksijen(0.01f);
-        DecraseAclik(0.01f);
-        DecraseSusuzluk(0.01f);
+        if (!pauseMenuScript.IsPaused)
+        {
+            DecraseOksijen(0.01f);
+            DecraseAclik(0.01f);
+            DecraseSusuzluk(0.01f);
+        }
+
     }
     public void DecraseHealth(float amount)
     {

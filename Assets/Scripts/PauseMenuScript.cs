@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenuScript : MonoBehaviour
 {
     public GameObject pauseMenuIU;
+    public bool IsPaused {  get; private set; }
 
     [SerializeField] private GameOverUI gameOver;
     void Update()
@@ -16,6 +17,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Pause()
     {
+        IsPaused = true;
         pauseMenuIU.SetActive(true);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None; // Unlock the cursor
@@ -23,6 +25,7 @@ public class PauseMenuScript : MonoBehaviour
     }
     public void Resume()
     {
+        IsPaused = false;
         pauseMenuIU.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked; 
