@@ -1780,7 +1780,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3490026887102541866}
@@ -1850,8 +1850,10 @@ MonoBehaviour:
   navMeshAgent: {fileID: 345244177629295401}
   animator: {fileID: 3490026887111630760}
   player: {fileID: 0}
-  backAngleThreshold: 60
-  attackDistance: 1.5
+  flashlight: {fileID: 0}
+  runAwayCheckpoints: []
+  attackDistance: 3
+  attackAngle: 60
 --- !u!195 &345244177629295401
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1866,7 +1868,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

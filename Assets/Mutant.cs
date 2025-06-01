@@ -21,6 +21,15 @@ public class Mutant : MonoBehaviour
     private bool isIdle = false;
     private Coroutine idleCoroutine;
 
+    void Start()
+    {
+        GameObject[] checkpointObjects = GameObject.FindGameObjectsWithTag("Checkpoint");
+        runAwayCheckpoints = new Transform[checkpointObjects.Length];
+        for (int i = 0; i < checkpointObjects.Length; i++)
+        {
+            runAwayCheckpoints[i] = checkpointObjects[i].transform;
+        }
+    }
     void Update()
     {
         bool flashlightOn = flashlight.gameObject.activeInHierarchy;

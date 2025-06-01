@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -91,10 +92,9 @@ public class CharacterModel : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H))
-        {
-            DecraseHealth(10);
-        }
+        DecraseOksijen(0.01f);
+        DecraseAclik(0.01f);
+        DecraseSusuzluk(0.01f);
     }
     public void DecraseHealth(float amount)
     {
@@ -128,7 +128,7 @@ public class CharacterModel : MonoBehaviour
     }
     public void DecraseSusuzluk(float amount)
     {
-        if( Susuzluk - amount < 0)
+        if (Susuzluk - amount < 0)
         {
             Susuzluk = 0;
         }
@@ -146,9 +146,9 @@ public class CharacterModel : MonoBehaviour
         }
         else
         {
-            Susuzluk += amount;   
+            Susuzluk += amount;
         }
-        
+
         UpdateSusuzlukBar();
     }
     private void UpdateHealthBar()
@@ -179,7 +179,6 @@ public class CharacterModel : MonoBehaviour
             susuzlukBar.fillAmount = (float)Susuzluk / MaxSusuzluk;
         }
     }
-    
-    
-    
+
+
 }
