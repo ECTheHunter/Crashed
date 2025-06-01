@@ -94,9 +94,9 @@ public class CharacterModel : MonoBehaviour
     {
         if (!pauseMenuScript.IsPaused)
         {
-            DecraseOksijen(0.01f);
+            DecraseOksijen(0.03f);
             DecraseAclik(0.01f);
-            DecraseSusuzluk(0.01f);
+            DecraseSusuzluk(0.02f);
         }
 
     }
