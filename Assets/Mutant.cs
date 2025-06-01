@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Ilumisoft.HealthSystem;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +10,7 @@ public class Mutant : MonoBehaviour
     public Animator animator;
     public Transform player;
     public Light flashlight;
-
+    public GameObject hitbox;
     public Transform[] runAwayCheckpoints; // Assign in inspector: random points to flee to when hit by light
     public float attackDistance = 1.5f;
     public float attackAngle = 60f;
@@ -65,7 +66,11 @@ public class Mutant : MonoBehaviour
             }
 
         }
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
+        // Prevent triggering a new attack if already in an attack animation
+        if (!stateInfo.IsTag("Attack"))
+            hitbox.SetActive(false);
         UpdateAnimator();
         CheckBackAttack();
     }
@@ -159,7 +164,7 @@ public class Mutant : MonoBehaviour
     {
         while (true)
         {
-            int randomIdleValue = Random.Range(1, 1);
+            int randomIdleValue = Random.Range(1, 3);
             animator.SetInteger("idleValue", randomIdleValue);
 
             // Wait until leaving idle state (i.e., speed > 0.1f) or some time passes before changing again
@@ -199,6 +204,7 @@ public class Mutant : MonoBehaviour
 
         int random = Random.Range(1, 3);
         animator.SetInteger("attackValue", random);
+        hitbox.SetActive(true);
     }
 
 }
