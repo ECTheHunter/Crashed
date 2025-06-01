@@ -38,7 +38,7 @@ public class GameOverUI : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("Space_Forest");
         Time.timeScale = 1f;
 
     }
