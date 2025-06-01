@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 public class PauseMenuScript : MonoBehaviour
 {
     public GameObject pauseMenuIU;
+
+    [SerializeField] private GameOverUI gameOver;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameOver.isDead)
         {
             Pause();
         }

@@ -6,11 +6,13 @@ public class GameOverUI : MonoBehaviour
 {
 
     public GameObject GameOver;
+    public bool isDead {  get; private set; }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            isDead = true;
             Debug.Log("ölecek");
             gameOver();
             Debug.Log("öldü");
