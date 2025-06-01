@@ -6,16 +6,18 @@ public class GameOverUI : MonoBehaviour
 {
 
     public GameObject GameOver;
-    public bool isDead {  get; private set; }
+    public bool isDead { get; private set; }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        GameObject player = GameObject.FindWithTag("Player");
+
+        if (player.GetComponent<CharacterModel>().Health < 0.1f || player.GetComponent<CharacterModel>().Oksijen < 0.1f || player.GetComponent<CharacterModel>().Susuzluk < 0.1f || player.GetComponent<CharacterModel>().Aclik < 0.1f)
         {
             isDead = true;
-            Debug.Log("ölecek");
+            Debug.Log("ï¿½lecek");
             gameOver();
-            Debug.Log("öldü");
+            Debug.Log("ï¿½ldï¿½");
         }
     }
     public void gameOver()
@@ -29,9 +31,9 @@ public class GameOverUI : MonoBehaviour
 
     public void QuitButton()
     {
-        
-         Application.Quit();
-       
+
+        Application.Quit();
+
     }
 
     public void RestartButton()
